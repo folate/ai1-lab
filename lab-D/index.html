@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pogodynka</title>
+</head>
+<body>
+    <h1>Pogodynka</h1>
+    <div class="input-form">
+        <input required type="text" id="city-input" placeholder="Wpisz nazwę miasta" onkeydown="if (event.key === 'Enter') getWeather()">
+        <button onclick="getWeather()">Pogoda</button>
+    </div>
+    <div id="current-weather">
+        <h1>Aktualna Pogoda:</h1>
+        <div class="weather-div">
+            <span class="time"><h3>Czas:</h3><h3 id="time"></h3></span>
+            <span class="weather-icon"><img id="weather-icon" src="" alt=""></span>
+            <div class="infos">
+                <span><h3>Miasto:</h3><h3 id="city-name"></h3></span>
+                <span><h3>Warunki:</h3><h3 id="condition"></h3></span>
+                <span><h3>Temperatura:</h3><h3 id="temperature"></h3></span>
+                <span><h3>Odczuwalna:</h3><h3 id="feels-like"></h3></span>
+                <span><h3>Wilgotność:</h3><h3 id="humidity"></h3></span>
+            </div>
+        </div>
+    </div>
+    <div class="forecast">
+        <h1>Prognoza na najbliższe dni:</h1>
+        <!-- ten div pokaże sie tylko wtedy gdy forecast-cards nie jest puste - wynik działania css -->
+        <div id="forecast-cards" class="forecast-cards"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
