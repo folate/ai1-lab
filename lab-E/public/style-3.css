@@ -1,0 +1,304 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: #fdfbf7;
+  color: #2d3436;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+h1, h2, h3 {
+  font-family: "Gambetta", serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: #636e72;
+}
+
+header {
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 1.5rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #ececec;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header span {
+  font-family: "Gambetta", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #d35400;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+header nav ul a {
+  text-decoration: none;
+  color: #2d3436;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+  position: relative;
+}
+header nav ul a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #d35400;
+  transition: width 0.3s ease;
+}
+header nav ul a:hover {
+  color: #d35400;
+}
+header nav ul a:hover::after {
+  width: 100%;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+main > h1 {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: #2d3436;
+}
+main > h1 u {
+  text-decoration-color: rgba(211, 84, 0, 0.3);
+  text-decoration-thickness: 6px;
+  text-underline-offset: 4px;
+}
+
+section {
+  margin-bottom: 6rem;
+}
+section h2 {
+  font-size: 2.25rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+section h2::after {
+  content: "";
+  display: block;
+  width: 40%;
+  height: 4px;
+  background: #d35400;
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+.breeds {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+.breeds article {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
+}
+.breeds article:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.12);
+  border-color: rgba(211, 84, 0, 0.1);
+}
+.breeds article h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2d3436;
+}
+.breeds article img {
+  width: 100%;
+  height: 240px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+section:not(#breeds) article {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+  display: grid;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  section:not(#breeds) article {
+    grid-template-columns: 300px 1fr;
+    align-items: start;
+  }
+}
+section:not(#breeds) article h3 {
+  grid-column: 1/-1;
+  font-size: 1.75rem;
+  color: #d35400;
+  border-bottom: 1px solid #ececec;
+  padding-bottom: 1rem;
+}
+section:not(#breeds) article img {
+  width: 100%;
+  height: 100%;
+  max-height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section:not(#breeds) article div, section:not(#breeds) article > p, section:not(#breeds) article > ul, section:not(#breeds) article > dl {
+  grid-column: 2/-1;
+  align-self: start;
+}
+@media (max-width: 767px) {
+  section:not(#breeds) article div, section:not(#breeds) article > p, section:not(#breeds) article > ul, section:not(#breeds) article > dl {
+    grid-column: 1/-1;
+  }
+}
+section:not(#breeds) article ul, section:not(#breeds) article dl {
+  background: rgba(211, 84, 0, 0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+section:not(#breeds) article ul li, section:not(#breeds) article dl li {
+  list-style-position: inside;
+  margin-bottom: 0.5rem;
+}
+section:not(#breeds) article ul li::marker, section:not(#breeds) article dl li::marker {
+  color: #d35400;
+}
+section:not(#breeds) article dt {
+  font-weight: 700;
+  color: #2d3436;
+  margin-top: 0.5rem;
+}
+section:not(#breeds) article dd {
+  margin-bottom: 0.5rem;
+  margin-left: 0;
+  color: #636e72;
+}
+section:not(#breeds) hr {
+  border: 0;
+  height: 1px;
+  background: #ececec;
+  margin: 3rem 0;
+}
+
+@media (min-width: 768px) {
+  section:not(#breeds) article {
+    display: block;
+  }
+  section:not(#breeds) article h3 {
+    margin-bottom: 1.5rem;
+  }
+  section:not(#breeds) article img {
+    float: left;
+    width: 300px;
+    max-height: none;
+    margin: 0 1.75rem 1.25rem 0;
+  }
+  section:not(#breeds) article > p,
+  section:not(#breeds) article > ul,
+  section:not(#breeds) article > dl,
+  section:not(#breeds) article > div {
+    grid-column: auto;
+    margin-bottom: 1.1rem;
+  }
+  section:not(#breeds) article::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+footer {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-top: auto;
+}
+footer p {
+  color: #888;
+  margin-bottom: 1rem;
+}
+footer button {
+  background: #d35400;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-left: 10px;
+}
+footer button:hover {
+  background: rgb(236.5, 94.1516587678, 0);
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  header nav ul {
+    gap: 1rem;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  main > h1 {
+    font-size: 2.5rem;
+  }
+  section:not(#breeds) article {
+    grid-template-columns: 1fr;
+  }
+  img {
+    max-height: 200px;
+  }
+}
+#style-links a {
+  margin-right: 12px;
+  text-decoration: none;
+  color: #d35400;
+  font-weight: 500;
+}
+#style-links a:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=style-3.css.map */
